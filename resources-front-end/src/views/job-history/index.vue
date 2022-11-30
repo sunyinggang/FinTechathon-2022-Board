@@ -149,6 +149,12 @@
                   @click="onRetry(scope.row)"
                 >{{ scope.row.status === 'failed' || scope.row.status === 'canceled' ? 'retry' : scope.row.status === 'waiting' || scope.row.status === 'running' ? 'cancel' : '' }}</el-button>
               </div>
+              <div v-else-if="item.key === 'goto'">
+                <el-button
+                  type="text"
+                  @click="onGo(scope.row)"
+                >预测</el-button>
+              </div>
               <span v-else>{{ scope.row[item.key] }}</span>
             </template>
           </el-table-column>
@@ -224,12 +230,12 @@ export default {
         {
           key: 'jobId',
           label: 'ID',
-          width: 250
+          width: 200
         },
         {
           key: 'role',
           label: 'Role',
-          width: 100
+          width: 80
         },
         {
           key: 'partyId',
@@ -267,7 +273,7 @@ export default {
         {
           key: 'notes',
           label: 'Notes',
-          minWidth: 170
+          minWidth: 80
         },
         {
           key: 'progress',
@@ -278,7 +284,17 @@ export default {
         {
           key: 'action',
           label: 'Action',
-          width: 100
+          width: 90
+        },
+        {
+          key: 'goto',
+          label: 'GoTo',
+          width: 80
+        },
+        {
+          key: '',
+          label: '',
+          width: 80
         }
       ],
       startTimeSort: 'desc',
@@ -551,7 +567,7 @@ export default {
       }
       // console.log(query)
       const href = this.$router.resolve({
-        path: '/details',
+        path: '/board/details',
         query
       })
       window.open(href.href, '_blank')
@@ -687,6 +703,14 @@ export default {
             })
           })
         })
+    },
+    onGo(row) {
+      this.$router.push({
+        name: 'CARFORM',
+        query: {
+          jobId: row.jobId
+        }
+      })
     },
     queryFileds() {
       queryFileds().then(response => {

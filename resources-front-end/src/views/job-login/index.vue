@@ -1,6 +1,6 @@
 <template>
   <div class="app-container login-container flex flex-col flex-center">
-    <span class="title">Welcome to FATEBoard</span>
+    <span class="title">欢迎使用安全行驶助理</span>
     <!-- 当前登录提示内容 -->
     <hint
       :type="hintType"

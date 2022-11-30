@@ -118,7 +118,7 @@ export default {
     enter(job_id, role, party_id) {
       window.open(
         this.$router.resolve({
-          path: '/dashboard',
+          path: '/board/dashboard',
           query: { job_id, role, party_id }
         }).href,
         '_blank'

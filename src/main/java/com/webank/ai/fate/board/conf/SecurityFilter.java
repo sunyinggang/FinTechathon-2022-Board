@@ -43,9 +43,9 @@ public class SecurityFilter implements Filter {
         rep.addHeader("X-Frame-Options", "DENY");
 
         if (allowCORS) {
-            rep.addHeader("Access-Control-Allow-Origin", frontEndUrl);
+            rep.addHeader("Access-Control-Allow-Origin", "*");
             rep.addHeader("Access-Control-Allow-Credentials", "true");
-            rep.addHeader("Access-Control-Allow-Headers", "Content-Type");
+            rep.addHeader("Access-Control-Allow-Headers", "*");
             rep.addHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH");
         }
 

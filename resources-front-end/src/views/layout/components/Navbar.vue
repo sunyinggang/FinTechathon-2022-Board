@@ -3,14 +3,15 @@
     <div class="navbar flex space-between flex-center">
       <div>
         <div class="home-btn c-fff" @click="go('/')">
-          <b>FATE</b>Board
+          <b>安全行驶助理</b>
         </div>
       </div>
       <div class="router-btns flex flex-center">
-        <span v-if="!!username" :class="{'active':path === '/running'}" @click="go('/running')">RUNNING</span>
-        <span v-if="!!username" :class="{'active':path === '/history'}" @click="go('/history')">JOBS</span>
+        <span v-if="!!username" :class="{'active':path === '/board/running'}" @click="go('/board/running')">RUNNING</span>
+        <span v-if="!!username" :class="{'active':path === '/board/history'}" @click="go('/board/history')">JOBS</span>
+        <span v-if="!!username" :class="{'active':path === '/carview'}" @click="go('/carview')">CarView</span>
         <userinfo v-if="!!username" />
-        <span v-if="!username" :class="{'active':path === '/login'}" @click="go('/login')">SIGNIN</span>
+        <span v-if="!username" :class="{'active':path === '/board/login'}" @click="go('/board/login')">SIGNIN</span>
       </div>
     </div>
 

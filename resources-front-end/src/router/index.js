@@ -46,17 +46,17 @@ export const constantRouterMap = [
   {
     path: '/',
     component: Layout,
-    redirect: '/running',
+    redirect: '/board/running',
     name: 'Dashboard',
     hidden: true,
     children: [
       {
-        path: '/running',
+        path: '/board/running',
         name: 'RUNNING',
         component: () => import('@/views/job-running')
       },
       {
-        path: '/dashboard',
+        path: '/board/dashboard',
         component: () => import('@/views/job-dashboard/index')
       },
       // {
@@ -74,7 +74,7 @@ export const constantRouterMap = [
       //   component: () => import('@/views/experiment')
       // },
       {
-        path: '/history',
+        path: '/board/history',
         name: 'HISTORY',
         component: () => import('@/views/job-history')
       },
@@ -94,7 +94,7 @@ export const constantRouterMap = [
       //   component: () => import('@/views/job-history-setting')
       // },
       {
-        path: '/details',
+        path: '/board/details',
         name: 'JobDetails',
         component: () => import('@/views/job-details')
       },
@@ -104,11 +104,26 @@ export const constantRouterMap = [
       //   component: () => import('@/views/old-job-dashboard')
       // }
       {
-        path: '/login',
+        path: '/board/login',
         name: 'login',
         component: () => import('@/views/job-login/index')
+      },
+      {
+        path: '/board/carform',
+        name: 'CARFORM',
+        component: () => import('@/views/car-form')
+      },
+      {
+        path: '/board/cardash',
+        name: 'CARDASH',
+        component: () => import('@/views/car-dashboard')
       }
     ]
+  },
+  {
+    path: '/carview',
+    name: 'VIEW',
+    component: () => import('@/views/car-view')
   },
   // { path: '/login', component: () => import('@/views/job-login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },

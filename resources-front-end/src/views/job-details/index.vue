@@ -425,9 +425,9 @@ export default {
       let path = null
       if (!toPage) {
         if (this.jobFrom === 'Job overview') {
-          path = '/history'
+          path = '/board/history'
         } else if (this.jobFrom === 'Dashboard') {
-          path = '/dashboard'
+          path = '/board/dashboard'
         }
       } else {
         if (toPage === 'history') {

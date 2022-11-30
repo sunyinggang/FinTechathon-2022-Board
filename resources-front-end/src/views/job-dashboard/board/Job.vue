@@ -142,7 +142,7 @@ export default {
       }
       delete mid.component_name
       this.$router.push({
-        path: '/details',
+        name: 'JobDetails',
         query: mid
       })
     },

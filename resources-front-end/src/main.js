@@ -21,7 +21,7 @@
 import Vue from 'vue'
 window.Vue = Vue
 // import 'element-ui/lib/theme-chalk/index.css'
-import './theme/index.css'
+import './themes/theme-dark0/index.css'
 import 'babel-polyfill'
 import ElementUI from 'element-ui'
 
@@ -35,6 +35,7 @@ import store from './store'
 import router from './router'
 import '@/icons' // icon
 import '@/iconfont/iconfont.css' // iconfont
+import dataV from '@jiaminghi/data-view'
 
 // import '@/permission' // permission control
 /**
@@ -51,6 +52,7 @@ import '@/iconfont/iconfont.css' // iconfont
 // }
 
 Vue.use(ElementUI, { locale })
+Vue.use(dataV)
 
 Vue.config.productionTip = false
 Vue.filter('projectTypeFormat', type => {
